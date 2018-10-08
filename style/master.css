@@ -1,12 +1,26 @@
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  margin: 15px;
+  display: flex;
+}
+
+.sidebar {
+  border: blue solid 3px;
+  font-size: 0.75em;
+  height: 50vh;
+  width: 37vw;
+  margin: auto;
+  text-align: center;
+}
+
 #map {
   height: 50vh;
   width: 60vw;
-}
-/* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: auto;
 }
