@@ -11,9 +11,9 @@ function init() {
 
   const placesFromLocalStorage = JSON.parse(localStorage.getItem('myPlaces'));
   if (Array.isArray(placesFromLocalStorage)) {
-    myPlaces = placesFromLocalStorage;
-    renderMarkers();
-  }
+    myPlaces = placesFromLocalStorage; //if something was found
+    renderMarkers();                   //in the local storage,
+  }                                    //set it as current place list.
 }
 
 function addPlace(event) {
@@ -21,17 +21,17 @@ function addPlace(event) {
     position: event.latLng
   });
 
-  localStorage.setItem('myPlaces', JSON.stringify(myPlaces));
-  renderMarkers();
+  localStorage.setItem('myPlaces', JSON.stringify(myPlaces)); //after marker is added, render it
+  renderMarkers();                                            // and synchronize local storage
 }
 
 function renderMarkers() {
-  googleMap.markerList.forEach(m => m.setMap(null));
+  googleMap.markerList.forEach(m => m.setMap(null)); //remove all markers
   googleMap.markerList = [];
 
-  myPlaces.forEach((place) => {
-    const marker = new google.maps.Marker({
-      position: place.position,
+  myPlaces.forEach((place) => {                     //add new markers
+    const marker = new google.maps.Marker({         //basing on "myPlaces"
+      position: place.position,                     //array elements
       map: googleMap
     });
 
