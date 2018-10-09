@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 
 * {
   padding: 0;
@@ -11,16 +13,22 @@
 }
 
 .sidebar {
-  border: blue solid 3px;
+  border: rgba(101, 171, 236, 0.56) solid 3px;
   font-size: 0.75em;
   height: 50vh;
   width: 37vw;
   margin: auto;
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  padding: 2px;
 }
 
 #map {
   height: 50vh;
   width: 60vw;
   margin: auto;
+}
+
+.earthIcon {
+  width: 1em;
 }

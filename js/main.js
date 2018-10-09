@@ -61,7 +61,9 @@ let map;
     }
   }
 
-window.onload = function() {
-  setTimeout(initMap,1000)
-    // initMap();
-  }
+  //commented out code below was ensureing that the window was loaded and the initMap had a 1500ms delay before being called which gave the script time to load the actual defining functions... but because we took out the callback in the script tags on the HTML page we ensured everything would be loaded before anything was called so there is no need for them anymore
+
+// window.onload = function() {
+//   setTimeout(initMap,1500)
+     initMap();
+  //}

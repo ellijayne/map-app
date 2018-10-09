@@ -13,7 +13,7 @@
 <body>
   <div class="main-container">
     <div class="sidebar">
-      <h1>My favourite places in the <img src="images/earth.ico"</h1>
+      <h1>My favourite places in the <img class="earthIcon" src="images/earth.ico"</h1>
       <div id="favPlacesList">
 
       </div>
@@ -26,12 +26,15 @@
 
 
 
+<!--the below link allowed us access to library??? and created callback but also would load before API was properly done and initMap function would be called in JS file before it was defined... by removing it it slows the page load SLIGHTLY but ensures all is loaded before we can interact with it-->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMONXu98ZOKief2zTayNxy_qADP_frmNo&libraries=places&callback=initMap"></script> -->
 
+<!-- Synchronously loading the API
+In the script tag that loads the Maps JavaScript API, it is possible to omit the async attribute and the callback parameter. This will cause the loading of the API to block until the API is downloaded.
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMONXu98ZOKief2zTayNxy_qADP_frmNo&libraries=places&callback=initMap"></script>
+This will probably slow your page load. But it means you can write subsequent script tags assuming that the API is already loaded. -->
 
-
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMONXu98ZOKief2zTayNxy_qADP_frmNo"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMONXu98ZOKief2zTayNxy_qADP_frmNo"></script>
 
 
   <script src="js/main.js"></script>
