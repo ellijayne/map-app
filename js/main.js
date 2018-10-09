@@ -31,8 +31,8 @@ let map;
     //////////// addPlace() handles the map click — then adds new place to the list and invokes marker rendering.
 
     function addPlace(event) {
-      // document.getElementById('favPlacesList').textContent('<p>' + 'hey ' + place.name + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</p>')
-      // console.log('hellooooo')
+      document.getElementById('favPlacesList').textContent('<p>' + 'hey ' + place.name + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</p>')
+      console.log('hellooooo')
 
       myPlaces.push({
         position: event.latLng
