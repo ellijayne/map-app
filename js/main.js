@@ -1,13 +1,11 @@
 console.log('hello again');
 
-  // let googleMap;
+
 let myPlaces = [];
+let map;
 
 
   //////////// init() function initializes the map element using Google Maps API, sets up the map click action and then tries to load markers from the localStorage.
-
-let map;
-
 
   initMap = function() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -31,17 +29,30 @@ let map;
     //////////// addPlace() handles the map click — then adds new place to the list and invokes marker rendering.
 
     function addPlace(event) {
-      document.getElementById('favPlacesList').textContent('<p>' + 'hey ' + place.name + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</p>')
-      console.log('hellooooo')
+      // document.getElementById('favPlacesList').textContent('<p>' + place.name + 'Place ID: ' + place.place_id + '<br>' + place.formatted_address + '</p>')
+      // console.log('hellooooo')
 
       myPlaces.push({
-        position: event.latLng
-
+        position: event.latLng,
+        name: place.name
       });
+
+      console.log(myPlaces);
+
 
       localStorage.setItem('myPlaces', JSON.stringify(myPlaces)); //after marker is added, render it
       renderMarkers();                                            // and synchronize local storage
     }
+
+    function getCity() {
+      for (var i = 0; i < myPlaces.length; i++) {
+        findCityLat = myPlaces[i].position.lat;
+        findCityLng = myPlaces[i].position.lng;
+        console.log(`Lat: ${findCityLat}`);
+        console.log(`Lng: ${findCityLng}`);
+      }
+    }
+    getCity();
 
 
     ////////// renderMarkers() iterates through the places in the array and after clearing the map, puts the markers on it.
