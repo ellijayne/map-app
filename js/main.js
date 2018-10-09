@@ -50,6 +50,7 @@ let map;
         findCityLng = myPlaces[i].position.lng;
         console.log(`Lat: ${findCityLat}`);
         console.log(`Lng: ${findCityLng}`);
+        console.log(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${findCityLat},${findCityLng}&sensor=true&key=AIzaSyDMONXu98ZOKief2zTayNxy_qADP_frmNo`);
       }
     }
     getCity();
